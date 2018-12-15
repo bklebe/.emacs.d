@@ -1,6 +1,3 @@
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
 (add-to-list 'default-frame-alist '(font . "Operator Mono SSm-14"))
 
 (load-theme 'zenburn t)

@@ -1,3 +1,4 @@
+;; always prefer fresh bytecode
 (setq load-prefer-newer t)
 
 (defvar root-dir (file-name-directory load-file-name)
@@ -23,14 +24,14 @@
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
-;; macOS specific settings
-(when (eq system-type 'darwin)
-  (require 'macos-settings))
-
 (require 'pkg-init)
-(require 'shell)
 (require 'ux)
 (require 'editor)
 (require 'ocaml)
 (require 'org-mode-config)
 (require 'backup)
+(require 'company-settings)
+
+;; macOS specific settings
+(when (eq system-type 'darwin)
+  (require 'macos-settings))

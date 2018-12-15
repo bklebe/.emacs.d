@@ -47,7 +47,7 @@
 (use-package utop :defer t)
 (use-package flycheck-ocaml :defer t)
 
-(use-package proof-general :defer t)
+(use-package proof-general :no-require t)
 
 (use-package org :defer t)
 (use-package exec-path-from-shell :defer t)

@@ -36,15 +36,20 @@
 
 (eval-when-compile (require 'use-package))
 
+(use-package zenburn-theme :defer t)
+
 (use-package company :defer t)
 (use-package flycheck :defer t)
+
 (use-package tuareg :defer t)
 (use-package merlin :defer t)
-(use-package flycheck-ocaml :defer t)
-(use-package proof-general :defer t)
 (use-package utop :defer t)
+(use-package flycheck-ocaml :defer t)
+
+(use-package proof-general :defer t)
+
 (use-package org :defer t)
 (use-package exec-path-from-shell :defer t)
-(use-package zenburn-theme :defer t)
+
 
 (provide 'pkg-init)

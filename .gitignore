@@ -1,5 +1,5 @@
 auto-save-list/
-*~
 elpa/
 eshell/
-.DS_Store
+**/.DS_Store
+custom.el

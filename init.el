@@ -1,6 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+(if (file-exists-p "~/.emacs.d/custom.el")
+    (load custom-file))
 
 (require 'pkg-init)
 (require 'shell)

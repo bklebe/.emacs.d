@@ -25,12 +25,12 @@
 (setq large-file-warning-threshold 100000000)
 
 (require 'pkg-init)
+(require 'company-settings)
 (require 'ux)
 (require 'editor)
 (require 'ocaml)
 (require 'org-mode-config)
 (require 'backup)
-(require 'company-settings)
 
 ;; macOS specific settings
 (when (eq system-type 'darwin)

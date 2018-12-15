@@ -1,6 +1,7 @@
-;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
+; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 (require 'cl)
 (require 'package)
+
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ; fetch the list of packages available
@@ -50,6 +51,5 @@
 
 (use-package org :defer t)
 (use-package exec-path-from-shell :defer t)
-
 
 (provide 'pkg-init)

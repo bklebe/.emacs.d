@@ -44,7 +44,7 @@
 (use-package proof-general :defer t)
 (use-package utop :defer t)
 (use-package org :defer t)
-(use-package exec-path-from-shell :defer nil)
+(use-package exec-path-from-shell :defer t)
 (use-package zenburn-theme :defer t)
 
 (provide 'pkg-init)

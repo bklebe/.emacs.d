@@ -1,3 +1,5 @@
+(setq load-prefer-newer t)
+
 (defvar root-dir (file-name-directory load-file-name)
   "The root of the current emacs configuration.")
 
@@ -14,8 +16,16 @@
 
 (add-to-list 'load-path lisp-dir)
 
-(if (file-exists-p custom-storage-file)
-    (load custom-storage-file))
+;; reduce the frequency of garbage collection by making it happen on
+;; each 50MB of allocated data (the default is on every 0.76MB)
+(setq gc-cons-threshold 50000000)
+
+;; warn when opening files bigger than 100MB
+(setq large-file-warning-threshold 100000000)
+
+;; macOS specific settings
+(when (eq system-type 'darwin)
+  (require 'macos-settings))
 
 (require 'pkg-init)
 (require 'shell)

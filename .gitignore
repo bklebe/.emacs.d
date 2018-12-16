@@ -3,3 +3,5 @@ elpa/
 eshell/
 **/.DS_Store
 custom.el
+.cache/
+.last-package-update-day

@@ -1,10 +1,10 @@
-; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
+;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 (require 'cl)
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-; fetch the list of packages available
+;; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -39,15 +39,9 @@
 
 (use-package zenburn-theme :defer t)
 
-(use-package company :defer t)
 (use-package flycheck :defer t)
 
-(use-package tuareg :defer t)
-(use-package merlin :defer t)
-(use-package utop :defer t)
-(use-package flycheck-ocaml :defer t)
-
-(use-package proof-general :no-require t)
+(use-package proof-general :defer t)
 
 (use-package org :defer t)
 (use-package exec-path-from-shell :defer t)

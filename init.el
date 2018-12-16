@@ -27,11 +27,12 @@
 (require 'pkg-init)
 (require 'company-settings)
 (require 'ux)
-(require 'editor)
-(require 'ocaml)
-(require 'org-mode-config)
-(require 'backup)
 
 ;; macOS specific settings
 (when (eq system-type 'darwin)
   (require 'macos-settings))
+
+(require 'editor)
+(require 'ocaml)
+(require 'org-mode-config)
+(require 'backup)

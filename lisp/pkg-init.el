@@ -39,11 +39,10 @@
 
 (use-package zenburn-theme :defer t)
 
-(use-package flycheck :defer t)
+(use-package flycheck)
 
 (use-package proof-general :defer t)
 
 (use-package org :defer t)
-(use-package exec-path-from-shell :defer t)
 
 (provide 'pkg-init)

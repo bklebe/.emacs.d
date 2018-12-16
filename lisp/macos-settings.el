@@ -1,5 +1,6 @@
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
 
 ;; There's no point in hiding the menu bar on macOS, so let's not do it
 (menu-bar-mode +1)

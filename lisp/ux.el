@@ -1,3 +1,4 @@
+(use-package zenburn-theme :defer t)
 (add-to-list 'default-frame-alist '(font . "Operator Mono SSm-14"))
 
 (load-theme 'zenburn t)

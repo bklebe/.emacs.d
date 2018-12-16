@@ -37,12 +37,4 @@
 
 (eval-when-compile (require 'use-package))
 
-(use-package zenburn-theme :defer t)
-
-(use-package flycheck)
-
-(use-package proof-general :defer t)
-
-(use-package org :defer t)
-
 (provide 'pkg-init)

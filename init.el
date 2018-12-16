@@ -25,7 +25,8 @@
 (setq large-file-warning-threshold 100000000)
 
 (require 'pkg-init)
-(require 'company-settings)
+(require 'company-config)
+(require 'flycheck-config)
 (require 'ux)
 
 ;; macOS specific settings

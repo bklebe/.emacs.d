@@ -10,6 +10,6 @@
 
 (use-package flycheck-ocaml :defer t)
 
-(use-package tuareg :defer t)
+(use-package tuareg :no-require t)
 
 (provide 'ocaml)

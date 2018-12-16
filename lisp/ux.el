@@ -15,19 +15,16 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
-;; more useful frame title, that show either a file or a
-;; buffer name (if the buffer isn't visiting a file)
+;;; more useful frame title, that show either a file or a
+;;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
       '(:eval (if (buffer-file-name)
                   (abbreviate-file-name (buffer-file-name))
                 "%b")))
 
-(line-number-mode t)
-(column-number-mode t)
-(size-indication-mode t)
 (toggle-frame-maximized)
 
-;; turn on highlighting current line
+;;; turn on highlighting current line
 (global-hl-line-mode 1)
 
 (provide 'ux)

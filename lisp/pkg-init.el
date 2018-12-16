@@ -33,4 +33,14 @@
 
 (eval-when-compile (require 'use-package))
 
+(use-package delight :defer t
+  :config
+  :delight eldoc-mode)
+
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (setq auto-package-update-hide-results t)
+  (auto-package-update-maybe))
+
 (provide 'pkg-init)

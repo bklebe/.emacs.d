@@ -31,15 +31,16 @@
 ;;; Warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
+;;; This must be called first to setup use-package
 (require 'pkg-init)
+
 (require 'company-config)
 (require 'flycheck-config)
 (require 'ux)
 
 (require 'editor)
-(require 'ocaml)
 (require 'org-mode-config)
-(require 'proof-general-config)
+(require 'development)
 (require 'backup)
 (require 'macos-config)
 (require 'windows-config)

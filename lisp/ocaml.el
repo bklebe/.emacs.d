@@ -8,11 +8,16 @@
 
 (use-package utop :defer t
   :hook (tuareg-mode . utop-minor-mode)
-  :delight)
+  :config
+  (setq utop-command "opam config exec utop -- -emacs")
+  :delight utop-minor-mode)
 
 (use-package flycheck-ocaml :defer t)
 
 (use-package tuareg :defer t
+  :bind ("C-c C-s" . utop)
+  :config
+  (setq compile-command "opam config exec corebuild ")
   :delight)
 
 (provide 'ocaml)

@@ -4,10 +4,6 @@
 ;;; Bozhidar Batsov's Emacs Prelude (https://github.com/bbatsov/prelude).
 
 ;;; Code:
-
-;;; always prefer fresh bytecode
-(setq load-prefer-newer t)
-
 (defvar root-dir (file-name-directory load-file-name)
   "The root of the current Emacs configuration.")
 
@@ -24,24 +20,17 @@
 
 (add-to-list 'load-path lisp-dir)
 
-;;; Reduce the frequency of garbage collection by making it happen on
-;;; each 50MB of allocated data (the default is on every 0.76MB).
-(setq gc-cons-threshold 50000000)
-
-;;; Warn when opening files bigger than 100MB
-(setq large-file-warning-threshold 100000000)
-
 ;;; This must be called first to setup use-package
-(require 'pkg-init)
+(require 'package-config)
 
 (require 'company-config)
 (require 'flycheck-config)
-(require 'ux)
+(require 'ui)
 
 (require 'editor)
 (require 'org-mode-config)
-(require 'development)
 (require 'backup)
 (require 'macos-config)
 (require 'windows-config)
+(require 'development)
 ;;; init.el ends here

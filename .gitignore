@@ -6,3 +6,4 @@ custom.el
 .cache/
 .last-package-update-day
 server/
+projectile-bookmarks.eld

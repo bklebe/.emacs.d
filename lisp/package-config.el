@@ -43,4 +43,5 @@
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
-(provide 'pkg-init)
+(provide 'package-config)
+;;; package-config.el ends here

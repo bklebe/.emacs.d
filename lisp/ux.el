@@ -1,7 +1,6 @@
-(use-package zenburn-theme :defer t)
-(add-to-list 'default-frame-alist '(font . "Operator Mono SSm-14"))
-
-(load-theme 'zenburn t)
+(use-package zenburn-theme
+  :config
+  (load-theme 'zenburn t))
 
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))

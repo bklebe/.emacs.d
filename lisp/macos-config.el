@@ -9,6 +9,7 @@
 
    ;; Enable emoji, and stop the UI from freezing when trying to display them.
    (when (fboundp 'set-fontset-font)
-     (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)))
+     (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
+   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm-14")))
 
 (provide 'macos-config)

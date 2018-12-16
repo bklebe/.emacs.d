@@ -42,4 +42,5 @@
 (require 'proof-general-config)
 (require 'backup)
 (require 'macos-config)
+(require 'windows-config)
 ;;; init.el ends here

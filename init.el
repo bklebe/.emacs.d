@@ -36,4 +36,5 @@
 (require 'editor)
 (require 'ocaml)
 (require 'org-mode-config)
+(require 'proof-general-config)
 (require 'backup)

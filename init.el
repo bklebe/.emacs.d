@@ -31,7 +31,7 @@
 
 ;; macOS specific settings
 (when (eq system-type 'darwin)
-  (require 'macos-settings))
+  (require 'macos-config))
 
 (require 'editor)
 (require 'ocaml)

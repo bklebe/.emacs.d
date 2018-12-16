@@ -4,4 +4,4 @@
   (setq company-dabbrev-downcase 0)
   (global-company-mode))
 
-(provide 'company-settings)
+(provide 'company-config)

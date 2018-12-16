@@ -9,4 +9,4 @@
 (when (fboundp 'set-fontset-font)
   (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
 
-(provide 'macos-settings)
+(provide 'macos-config)

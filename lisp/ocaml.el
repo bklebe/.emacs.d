@@ -10,6 +10,7 @@
 
 (use-package flycheck-ocaml :defer t)
 
-(use-package tuareg :no-require t)
+(use-package tuareg :defer t
+  :init (exec-path-from-shell-initialize))
 
 (provide 'ocaml)

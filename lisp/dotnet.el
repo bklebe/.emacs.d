@@ -1,6 +1,4 @@
-(require 'elec-pair)
-
-(setq omnisharp-expected-server-version "1.32.1")
+(setq omnisharp-expected-server-version "1.32.9-beta.20")
 
 (use-package omnisharp :defer t
   :after company

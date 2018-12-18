@@ -23,14 +23,14 @@
 ;;; This must be called first to setup use-package
 (require 'package-config)
 
+(require 'ui)
 (require 'company-config)
 (require 'flycheck-config)
-(require 'ui)
 
 (require 'editor)
-(require 'org-mode-config)
 (require 'backup)
+(require 'development)
+(require 'org-mode-config)
 (require 'macos-config)
 (require 'windows-config)
-(require 'development)
 ;;; init.el ends here

@@ -29,6 +29,7 @@
 ;;; Turns off annoying alarm
 (setq ring-bell-function 'ignore)
 (setq inhibit-startup-screen t)
+(setq inhibit-startup-echo-area-message t)
 
 ;;; Warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)

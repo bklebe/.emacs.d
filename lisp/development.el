@@ -38,10 +38,10 @@
     (add-hook 'lisp-mode-hook #'parinfer-mode))
   :delight parinfer-mode)
 
-;; (use-package smartparens :defer t
-;;   :config
-;;   (require 'smartparens-config)
-;;   (smartparens-global-strict-mode t))
+(use-package smartparens :defer t
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-strict-mode t))
 
 (require 'ocaml)
 (require 'dotnet)

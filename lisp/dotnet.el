@@ -1,5 +1,3 @@
-(require 'elec-pair)
-
 (setq omnisharp-expected-server-version "1.32.1")
 
 (use-package omnisharp :defer t
@@ -9,7 +7,6 @@
   :hook (csharp-mode . omnisharp-mode)
   :config
   (c-toggle-auto-newline)
-  ;; (electric-pair-local-mode 1)
   (add-to-list 'company-backends 'company-omnisharp)
   :delight)
 

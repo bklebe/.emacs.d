@@ -1,4 +1,4 @@
-(setq omnisharp-expected-server-version "1.32.9-beta.20")
+(setq omnisharp-expected-server-version "1.32.10")
 
 (use-package omnisharp :defer t
   :after company

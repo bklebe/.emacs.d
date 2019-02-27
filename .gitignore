@@ -7,3 +7,5 @@ custom.el
 .last-package-update-day
 server/
 projectile-bookmarks.eld
+transient/
+ac-comphist.dat

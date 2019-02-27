@@ -1,6 +1,10 @@
 (use-package magit :defer t
   :bind ("C-x g" . magit-status))
 
+(use-package magit-popup
+  :ensure t
+  :demand t)
+
 (use-package projectile :defer t
   :bind (("s-p" . projectile-command-map)
          ("C-c p" . projectile-command-map))

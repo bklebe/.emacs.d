@@ -20,4 +20,6 @@
   (setq compile-command "opam config exec corebuild ")
   :delight)
 
+(use-package dune :defer t)
+
 (provide 'ocaml)

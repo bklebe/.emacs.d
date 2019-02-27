@@ -19,6 +19,7 @@
 (use-package yasnippet-snippets :defer t)
 
 (use-package parinfer :defer t
+  :hook (dune-mode . parinfer-mode)
   :bind
   (("C-," . parinfer-toggle-mode))
   :init

@@ -1,9 +1,10 @@
 ;;; init.el --- Beatrix Klebe's Emacs init file
+
 ;;; Commentary:
-;;; My init file and most of the rest of my Emacs config borrows liberally from
-;;; Bozhidar Batsov's Emacs Prelude (https://github.com/bbatsov/prelude).
+;;; This config borrows liberally from bbatsov's Emacs Prelude (https://github.com/bbatsov/prelude).
 
 ;;; Code:
+
 (defvar root-dir (file-name-directory load-file-name)
   "The root of the current Emacs configuration.")
 

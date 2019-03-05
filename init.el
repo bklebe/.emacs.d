@@ -24,13 +24,18 @@
 (require 'package-config)
 
 (require 'ui)
+(require 'backup)
+(when (eq system-type 'darwin) (require 'macos-config))
+(when (eq system-type 'windows-nt) (require 'windows-config))
+
+
 (require 'company-config)
 (require 'flycheck-config)
-
 (require 'editor)
-(require 'backup)
+
 (require 'development)
+
 (require 'org-mode-config)
-(require 'macos-config)
-(require 'windows-config)
+
+(provide 'init)
 ;;; init.el ends here

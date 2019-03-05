@@ -1,4 +1,10 @@
-(use-package org :defer t
+;;; org-mode-config.el --- Setup for org-mode
+
+;;; Commentary:
+
+;;; Code:
+
+(use-package org
              :bind (("C-c l" . org-store-link)
                     ("C-c a" . org-agenda)
                     ("C-c c" . org-capture)
@@ -6,3 +12,4 @@
              :delight)
 
 (provide 'org-mode-config)
+;;; org-mode-config.el ends here

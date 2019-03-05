@@ -1,6 +1,13 @@
+;;; dotnet.el --- Setup for .NET development
+
+;;; Commentary:
+
+;;; Code:
+
+
 (setq omnisharp-expected-server-version "1.32.10")
 
-(use-package omnisharp :defer t
+(use-package omnisharp
   :after company
   :bind (("C-c r r" . omnisharp-run-code-action-refactoring)
          ("C-c C-c" . recompile))
@@ -10,8 +17,9 @@
   (add-to-list 'company-backends 'company-omnisharp)
   :delight)
 
-(use-package csharp-mode :defer t)
+(use-package csharp-mode)
 
-(use-package fsharp-mode :defer t)
+(use-package fsharp-mode)
 
 (provide 'dotnet)
+;;; dotnet.el ends here

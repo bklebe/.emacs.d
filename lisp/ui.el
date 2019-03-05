@@ -1,11 +1,13 @@
 ;;; ui.el --- UI configuration
+
 ;;; Commentary:
 ;;; As in many other places in this config, a good portion from this is
 ;;; from bbatsov/prelude.
 
 ;;; Code:
+
 ;;; Nice syntax theme
-(use-package zenburn-theme
+(use-package zenburn-theme :defer nil
   :config
   (load-theme 'zenburn t))
 

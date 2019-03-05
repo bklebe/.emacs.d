@@ -1,24 +1,30 @@
-(use-package magit :defer t
+;;; development.el --- Packages and configuration for software development
+
+;;; Commentary:
+
+;;; Code:
+
+(use-package magit
   :bind ("C-x g" . magit-status))
 
-(use-package projectile :defer t
+(use-package projectile
   :bind (("s-p" . projectile-command-map)
          ("C-c p" . projectile-command-map))
   :config
   (projectile-mode t)
   :delight)
 
-(use-package yasnippet :defer t
+(use-package yasnippet
   :config
   (yas-global-mode t)
   :delight yas-minor-mode)
 
-(use-package rainbow-delimiters :defer t
+(use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package yasnippet-snippets :defer t)
+(use-package yasnippet-snippets)
 
-(use-package parinfer :defer t
+(use-package parinfer
   :hook (dune-mode . parinfer-mode)
   :bind
   (("C-," . parinfer-toggle-mode))
@@ -39,12 +45,7 @@
     (add-hook 'lisp-mode-hook #'parinfer-mode))
   :delight parinfer-mode)
 
-(use-package smartparens :defer t
-  :config
-  (require 'smartparens-config)
-  (smartparens-global-strict-mode t))
-
-(use-package eglot :defer t
+(use-package eglot
   :hook (rust-mode . eglot-ensure))
 
 (require 'ocaml)

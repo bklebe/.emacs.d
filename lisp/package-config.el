@@ -1,3 +1,9 @@
+;;; package-config.el --- Sets up packaging infrastructure
+
+;;; Commentary:
+
+;;; Code:
+
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 (require 'cl)
 (require 'package)
@@ -29,13 +35,14 @@
 
 (install-bootstrap-packages)
 
-(setq use-package-always-ensure t)
-
 (eval-when-compile (require 'use-package))
 
-(use-package delight :defer t
+(setq use-package-always-ensure t)
+(setq use-package-always-defer t)
+
+(use-package delight
   :config
-  :delight eldoc-mode)
+  :delight)
 
 (use-package auto-package-update
   :config

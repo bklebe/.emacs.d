@@ -44,8 +44,13 @@
   (require 'smartparens-config)
   (smartparens-global-strict-mode t))
 
+(use-package eglot :defer t
+  :hook (rust-mode . eglot-ensure))
+
 (require 'ocaml)
 (require 'dotnet)
 (require 'proof-general-config)
+(require 'rust)
 
 (provide 'development)
+;;; development.el ends here

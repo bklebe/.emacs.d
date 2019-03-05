@@ -1,3 +1,9 @@
+;;; editor.el --- text editor specific configuration
+
+;;; Commentary:
+
+;;; Code:
+
 (setq require-final-newline t)
 (delete-selection-mode t)
 (setq-default indent-tabs-mode nil)   ;; don't use tabs to indent
@@ -7,3 +13,4 @@
 (setq next-line-add-newlines nil)
 
 (provide 'editor)
+;;; editor.el ends here

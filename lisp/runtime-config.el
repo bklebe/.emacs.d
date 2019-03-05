@@ -1,3 +1,9 @@
+;;; runtime-config.el --- Configuring the Emacs runtime
+
+;;; Commentary:
+
+;;; Code:
+
 ;;; always prefer fresh bytecode
 (setq load-prefer-newer t)
 
@@ -6,3 +12,4 @@
 (setq gc-cons-threshold 50000000)
 
 (provide 'runtime-config)
+;;; runtime-config.el ends here

@@ -40,9 +40,7 @@
 (setq use-package-always-ensure t)
 (setq use-package-always-defer t)
 
-(use-package delight
-  :config
-  :delight)
+(use-package delight)
 
 (use-package auto-package-update
   :config

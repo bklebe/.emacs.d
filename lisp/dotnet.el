@@ -14,8 +14,7 @@
   :hook (csharp-mode . omnisharp-mode)
   :config
   (c-toggle-auto-newline)
-  (add-to-list 'company-backends 'company-omnisharp)
-  :delight)
+  (add-to-list 'company-backends 'company-omnisharp))
 
 (use-package csharp-mode)
 

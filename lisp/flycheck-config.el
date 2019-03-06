@@ -4,9 +4,9 @@
 
 ;;; Code:
 
-(use-package flycheck :demand t
+(use-package flycheck
+  :hook (prog-mode . flycheck-mode)
   :config
-  (global-flycheck-mode)
   (add-to-list 'flycheck-emacs-lisp-load-path lisp-dir))
 
 (provide 'flycheck-config)

@@ -4,7 +4,8 @@
 
 ;;; Code:
 
-(use-package proof-general :no-require t)
+(use-package proof-general
+  :no-require t)
 
 (provide 'proof-general-config)
 ;;; proof-general-config.el ends here

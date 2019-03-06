@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;;; Nice syntax theme
-(use-package zenburn-theme :defer nil
+(use-package zenburn-theme :demand t
   :config
   (load-theme 'zenburn t))
 

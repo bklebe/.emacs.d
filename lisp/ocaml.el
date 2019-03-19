@@ -1,4 +1,4 @@
-;;; ocaml.el --- Setup for OCaml programming
+;;; ocaml.el --- Setup for OCaml programming -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

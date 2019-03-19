@@ -1,4 +1,4 @@
-;;; ui.el --- UI configuration
+;;; ui.el --- UI configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;; As in many other places in this config, a good portion from this is

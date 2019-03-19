@@ -1,4 +1,4 @@
-;;; backup.el --- Configuring emacs' automatic backup settings
+;;; backup.el --- Configuring emacs' automatic backup settings -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;; This is cribbed from EmacsWiki.

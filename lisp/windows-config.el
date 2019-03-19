@@ -1,4 +1,4 @@
-;;; windows-config.el --- OS-specific settings for Windows
+;;; windows-config.el --- OS-specific settings for Windows -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

@@ -1,4 +1,4 @@
-;;; dotnet.el --- Setup for .NET development
+;;; dotnet.el --- Setup for .NET development -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

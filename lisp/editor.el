@@ -1,4 +1,4 @@
-;;; editor.el --- text editor specific configuration
+;;; editor.el --- text editor specific configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

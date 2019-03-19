@@ -1,4 +1,4 @@
-;;; company-config.el --- Setup for company-mode
+;;; company-config.el --- Setup for company-mode -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

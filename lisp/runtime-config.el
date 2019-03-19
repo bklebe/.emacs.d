@@ -1,4 +1,4 @@
-;;; runtime-config.el --- Configuring the Emacs runtime
+;;; runtime-config.el --- Configuring the Emacs runtime -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

@@ -1,4 +1,4 @@
-;;; macos-config.el --- OS-specific settings for macOS
+;;; macos-config.el --- OS-specific settings for macOS -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

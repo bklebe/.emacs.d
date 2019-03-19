@@ -1,4 +1,4 @@
-;;; rust.el --- Setup for Rust language development
+;;; rust.el --- Setup for Rust language development -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

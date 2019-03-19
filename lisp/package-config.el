@@ -1,4 +1,4 @@
-;;; package-config.el --- Sets up packaging infrastructure
+;;; package-config.el --- Sets up packaging infrastructure -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

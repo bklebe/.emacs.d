@@ -1,4 +1,4 @@
-;;; development.el --- Packages and configuration for software development
+;;; development.el --- Software development config -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

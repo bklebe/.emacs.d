@@ -1,4 +1,4 @@
-;;; init.el --- Beatrix Klebe's Emacs init file
+;;; init.el --- Beatrix Klebe's Emacs init file -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;; This config borrows liberally from bbatsov's Emacs Prelude (https://github.com/bbatsov/prelude).

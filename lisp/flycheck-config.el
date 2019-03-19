@@ -1,4 +1,4 @@
-;;; flycheck-config.el --- Settings for Emacs Flycheck
+;;; flycheck-config.el --- Settings for Emacs Flycheck -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

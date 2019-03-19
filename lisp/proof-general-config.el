@@ -1,4 +1,4 @@
-;;; proof-general-config.el --- Setup for proof-general major mode
+;;; proof-general-config.el --- Setup for proof-general major mode -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

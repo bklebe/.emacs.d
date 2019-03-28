@@ -1,4 +1,9 @@
-(setq omnisharp-expected-server-version "1.32.10")
+;;; dotnet --- Packages and configuration for working with .NET
+;;; Commentary:
+
+;;; Code:
+
+(setq omnisharp-expected-server-version "1.32.11")
 
 (use-package omnisharp :defer t
   :after company
@@ -15,3 +20,4 @@
 (use-package fsharp-mode :defer t)
 
 (provide 'dotnet)
+;;; dotnet.el ends here

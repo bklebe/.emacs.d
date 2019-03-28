@@ -1,11 +1,13 @@
-;;; ui.el --- UI configuration
+;;; ui.el --- UI configuration -*- lexical-binding: t; -*-
+
 ;;; Commentary:
 ;;; As in many other places in this config, a good portion from this is
 ;;; from bbatsov/prelude.
 
 ;;; Code:
+
 ;;; Nice syntax theme
-(use-package zenburn-theme
+(use-package zenburn-theme :demand t
   :config
   (load-theme 'zenburn t))
 

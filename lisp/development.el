@@ -1,51 +1,51 @@
-(use-package magit :defer t
+;;; development.el --- Software development config -*- lexical-binding: t; -*-
+
+;;; Commentary:
+
+;;; Code:
+
+(use-package magit
   :bind ("C-x g" . magit-status))
 
-(use-package projectile :defer t
+(use-package forge :demand t
+  :after magit)
+
+(use-package projectile
   :bind (("s-p" . projectile-command-map)
          ("C-c p" . projectile-command-map))
   :config
-  (projectile-mode t)
-  :delight)
+  (projectile-mode t))
 
-(use-package yasnippet :defer t
+(use-package yasnippet
+  :hook (prog-mode . yas-minor-mode)
   :config
-  (yas-global-mode t)
-  :delight yas-minor-mode)
+  (yas-reload-all))
 
-(use-package rainbow-delimiters :defer t
+(use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package yasnippet-snippets :defer t)
+(use-package yasnippet-snippets)
 
-(use-package parinfer :defer t
-  :hook (dune-mode . parinfer-mode)
+(use-package parinfer
+  :hook ((dune-mode emacs-lisp-mode lisp-mode) . parinfer-mode)
   :bind
   (("C-," . parinfer-toggle-mode))
   :init
   (progn
     (setq parinfer-extensions
-          '(defaults       ; should be included.
-            pretty-parens  ; different paren styles for different modes.
-            ; evil           ; If you use Evil.
-            ; lispy          ; If you use Lispy. With this extension, you should install Lispy and do not enable lispy-mode directly.
+          '(defaults         ; should be included.
+            pretty-parens    ; different paren styles for different modes.
             ; paredit        ; Introduce some paredit commands.
-            smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-            smart-yank))   ; Yank behavior depend on mode.
-    (add-hook 'clojure-mode-hook #'parinfer-mode)
-    (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
-    (add-hook 'common-lisp-mode-hook #'parinfer-mode)
-    (add-hook 'scheme-mode-hook #'parinfer-mode)
-    (add-hook 'lisp-mode-hook #'parinfer-mode))
-  :delight parinfer-mode)
+            smart-tab        ; C-b & C-f jump positions and smart shift with tab & S-tab.
+            smart-yank))))   ; Yank behavior depend on mode.
 
-(use-package smartparens :defer t
-  :config
-  (require 'smartparens-config)
-  (smartparens-global-strict-mode t))
+(use-package eglot
+  :hook (rust-mode . eglot-ensure))
 
 (require 'ocaml)
 (require 'dotnet)
 (require 'proof-general-config)
+(require 'rust)
 
 (provide 'development)
+;;; development.el ends here

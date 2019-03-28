@@ -9,3 +9,5 @@ server/
 projectile-bookmarks.eld
 transient/
 ac-comphist.dat
+forge-database.sqlite
+*.elc

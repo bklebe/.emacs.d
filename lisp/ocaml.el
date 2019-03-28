@@ -1,25 +1,29 @@
-(use-package merlin :defer t
+;;; ocaml.el --- Setup for OCaml programming -*- lexical-binding: t; -*-
+
+;;; Commentary:
+
+;;; Code:
+
+(use-package merlin
   :hook (tuareg-mode . merlin-mode)
   :config
   (setq merlin-error-after-save nil)
   (add-to-list 'company-backends 'merlin-company-backend)
-  (flycheck-ocaml-setup)
-  :delight)
+  (flycheck-ocaml-setup))
 
-(use-package utop :defer t
+(use-package utop
   :hook (tuareg-mode . utop-minor-mode)
   :config
-  (setq utop-command "opam config exec utop -- -emacs")
-  :delight utop-minor-mode)
+  (setq utop-command "opam config exec utop -- -emacs"))
 
-(use-package flycheck-ocaml :defer t)
+(use-package flycheck-ocaml)
 
-(use-package tuareg :defer t
+(use-package tuareg
   :bind ("C-c C-s" . utop)
   :config
-  (setq compile-command "opam config exec corebuild ")
-  :delight)
+  (setq compile-command "opam config exec corebuild "))
 
-(use-package dune :defer t)
+(use-package dune)
 
 (provide 'ocaml)
+;;; ocaml.el ends here

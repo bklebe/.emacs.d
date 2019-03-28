@@ -5,6 +5,12 @@
 
 ;;; Code:
 
+(setq gc-cons-threshold 402653184
+      gc-cons-percentage 0.6)
+
+(defvar file-name-handler-alist-cache file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
 (defvar root-dir (file-name-directory load-file-name)
   "The root of the current Emacs configuration.")
 
@@ -29,7 +35,6 @@
 (when (eq system-type 'darwin) (require 'macos-config))
 (when (eq system-type 'windows-nt) (require 'windows-config))
 
-
 (require 'company-config)
 (require 'flycheck-config)
 (require 'editor)
@@ -37,6 +42,11 @@
 (require 'development)
 
 (require 'org-mode-config)
+
+(setq gc-cons-threshold 16777216
+      gc-cons-percentage 0.1)
+
+(setq file-name-handler-alist file-name-handler-alist-cache)
 
 (provide 'init)
 ;;; init.el ends here

@@ -16,6 +16,8 @@
   :config
   (projectile-mode t))
 
+(use-package csv-mode)
+
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode)
   :config

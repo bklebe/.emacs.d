@@ -4,8 +4,6 @@
 
 ;;; Code:
 
-(setq omnisharp-expected-server-version "1.32.11")
-
 (use-package omnisharp
   :after company
   :bind (("C-c r r" . omnisharp-run-code-action-refactoring)

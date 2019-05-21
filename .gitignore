@@ -11,3 +11,5 @@ transient/
 ac-comphist.dat
 forge-database.sqlite
 *.elc
+ido.last
+tramp

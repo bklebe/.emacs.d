@@ -12,7 +12,6 @@
 
 (setq insert-directory-program "/usr/local/bin/gls")
 
-
 ;; There's no point in hiding the menu bar on macOS, so let's not do it
 (menu-bar-mode +1)
 

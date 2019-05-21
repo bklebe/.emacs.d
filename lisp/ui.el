@@ -18,6 +18,11 @@
 (when (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode))
 
+;;; ido-mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
 ;;; Turn off toolbar
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))

@@ -48,6 +48,7 @@
 (require 'dotnet)
 (require 'proof-general-config)
 (require 'rust)
+(require 'python-tools)
 
 (provide 'development)
 ;;; development.el ends here

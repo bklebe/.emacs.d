@@ -7,5 +7,11 @@
 (add-to-list 'default-frame-alist '(font . "OPERATORMONOSSM-BOOK-12"))
 (setq default-directory "~/")
 
+(use-package powershell)
+
+(setq tramp-default-method "plink")
+
+(setq tramp-histfile-override "/dev/null")
+
 (provide 'windows-config)
 ;;; windows-config.el ends here

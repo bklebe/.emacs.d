@@ -5,8 +5,13 @@
 
 ;;; Code:
 
+(require 'cl)
+(require 'package)
+
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)
+
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (defvar file-name-handler-alist-cache file-name-handler-alist)
 (setq file-name-handler-alist nil)
@@ -28,8 +33,6 @@
 (add-to-list 'load-path lisp-dir)
 
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
-(require 'cl)
-(require 'package)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 

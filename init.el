@@ -69,7 +69,7 @@
 
 (use-package delight)
 
-(use-package auto-package-update
+(use-package auto-package-update :demand
   :config
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)

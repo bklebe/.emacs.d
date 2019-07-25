@@ -11,8 +11,6 @@
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)
 
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-
 (defvar file-name-handler-alist-cache file-name-handler-alist)
 (setq file-name-handler-alist nil)
 

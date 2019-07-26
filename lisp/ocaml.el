@@ -10,6 +10,7 @@
   (setq compile-command "opam config exec corebuild "))
 
 (use-package merlin
+  :after company-mode
   :hook (tuareg-mode . merlin-mode)
   :config
   (setq merlin-error-after-save nil)

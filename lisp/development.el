@@ -5,6 +5,8 @@
 ;;; Code:
 
 (use-package magit
+  :init (when (eq system-type 'windows-nt)
+            (setq magit-git-executable "C:\\Program Files\\Git\\cmd\\git.exe"))
   :bind ("C-x g" . magit-status))
 
 (use-package forge :demand t

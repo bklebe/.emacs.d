@@ -76,6 +76,9 @@
 (require 'backup)
 (when (eq system-type 'darwin) (require 'macos-config))
 (when (eq system-type 'windows-nt) (require 'windows-config))
+(when (eq system-type 'gnu/linux)
+  (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
+
 
 (require 'company-config)
 (require 'flycheck-config)

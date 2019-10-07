@@ -8,9 +8,6 @@
 (require 'cl)
 (require 'package)
 
-(setq gc-cons-threshold 402653184
-      gc-cons-percentage 0.6)
-
 (defvar file-name-handler-alist-cache file-name-handler-alist)
 (setq file-name-handler-alist nil)
 
@@ -87,11 +84,6 @@
 (require 'development)
 
 (require 'org-mode-config)
-
-(setq gc-cons-threshold 16777216
-      gc-cons-percentage 0.1)
-
-(setq file-name-handler-alist file-name-handler-alist-cache)
 
 (provide 'init)
 ;;; init.el ends here

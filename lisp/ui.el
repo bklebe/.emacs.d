@@ -18,11 +18,6 @@
 (when (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode))
 
-;;; ido-mode
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-
 ;;; Turn off toolbar
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
@@ -55,9 +50,6 @@
 
 ;;; Highlight current line
 (global-hl-line-mode 1)
-
-;;; Maximize Emacs at startup
-(toggle-frame-maximized)
 
 (provide 'ui)
 ;;; ui.el ends here

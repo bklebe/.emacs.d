@@ -4,6 +4,12 @@
 
 ;;; Code:
 
+(use-package company
+  :hook (prog-mode . company-mode)
+  :config
+  (setq company-idle-delay 0)
+  (setq company-dabbrev-downcase nil))
+
 (use-package magit
   :init (when (eq system-type 'windows-nt)
             (setq magit-git-executable "C:\\Program Files\\Git\\cmd\\git.exe"))

@@ -39,7 +39,7 @@
 ;; Nice scrolling
 (setq scroll-margin 0
       scroll-conservatively 100000
-      scroll-preserve-screen-position 1)
+      scroll-preserve-screen-position t)
 
 ;;; More useful frame title, that shows either a file or a
 ;;; buffer name (if the buffer isn't visiting a file).

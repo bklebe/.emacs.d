@@ -69,7 +69,27 @@
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
-(use-package helm)
+(use-package counsel :demand
+  :bind (("C-s" . swiper-isearch)
+         ("C-x b" . ivy-switch-buffer)
+         ("C-c v" . ivy-push-view)
+         ("C-c V" . ivy-pop-view)
+         ("C-c C-r" . ivy-resume)
+         ("C-c c" . counsel-compile)
+         ("C-c g" . counsel-git)
+         ("C-c j" . counsel-git-grep)
+         ("C-c L" . counsel-git-log)
+         ("C-c k" . counsel-rg)
+         ("C-c m" . counsel-linux-app)
+         ("C-c n" . counsel-fzf)
+         ("C-x l" . counsel-locate)
+         ("C-c J" . counsel-file-jump)
+         ("C-S-o" . counsel-rhythmbox)
+         ("C-c w" . counsel-wmctrl))
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (counsel-mode 1))
 
 (require 'ui)
 (require 'backup)

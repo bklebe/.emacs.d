@@ -10,7 +10,7 @@
     :config
     (exec-path-from-shell-initialize))
 
-(setq insert-directory-program "/usr/local/bin/gls")
+(setq insert-directory-program "gls")
 
 ;; There's no point in hiding the menu bar on macOS, so let's not do it
 (menu-bar-mode +1)

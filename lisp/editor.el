@@ -12,5 +12,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq next-line-add-newlines nil)
 
+(set-default 'truncate-lines t)
+
 (provide 'editor)
 ;;; editor.el ends here

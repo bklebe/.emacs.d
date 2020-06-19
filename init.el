@@ -111,5 +111,18 @@
 
 (require 'org-mode-config)
 
+(use-package erlang
+  :init
+  (setq erlang-root-dir "/usr/local/lib/erlang")
+  (setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
+  (setq erlang-compile-extra-opts '(debug_info))
+  :config
+  (require 'erlang-start))
+
+(use-package dtrace-script-mode
+  :mode "\\.d\\'")
+
+(use-package haskell-mode)
+
 (provide 'init)
 ;;; init.el ends here

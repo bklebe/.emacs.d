@@ -10,5 +10,7 @@
                     ("C-c c" . org-capture)
                     ("C-c b" . org-switchb)))
 
+(setq org-export-backends '(md txt))
+
 (provide 'org-mode-config)
 ;;; org-mode-config.el ends here

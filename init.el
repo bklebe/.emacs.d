@@ -33,9 +33,7 @@
 
 (package-initialize)
 
-(defvar bootstrap-packages
-  '(use-package
-    delight))
+(defvar bootstrap-packages '(use-package delight))
 
 (defun bootstrap-packages-installed-p ()
   "Check if all packages in 'bootstrap-packages' are installed."
@@ -98,16 +96,39 @@
 (when (eq system-type 'gnu/linux)
   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
 
-;;; always prefer fresh bytecode
+;; always prefer fresh bytecode
 (setq load-prefer-newer t)
 
-;;; Reduce the frequency of garbage collection by making it happen on
-;;; each 50MB of allocated data (the default is on every 0.76MB).
+;; Reduce the frequency of garbage collection by making it happen on
+;; each 50MB of allocated data (the default is on every 0.76MB).
 (setq gc-cons-threshold 50000000)
 
 (require 'editor)
 
 (require 'development)
+
+(use-package git-commit)
+
+(use-package server
+  :config (or (server-running-p) (server-mode)))
+
+(use-package elixir-mode
+  :init
+  (add-hook 'elixir-mode-hook
+            (lambda () (add-hook 'before-save-hook 'elixir-format nil t))))
+
+(use-package web-mode
+  :mode
+  "\\.html?\\'"
+  "\\.eex\\'"
+  "\\.[jt]sx?\\'"
+  "\\.s?css\\'"
+  :config
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
+
+(global-git-commit-mode t)
 
 (require 'org-mode-config)
 

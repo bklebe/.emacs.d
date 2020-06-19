@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(add-to-list 'default-frame-alist '(font . "OPERATORMONOSSM-BOOK-12"))
+(add-to-list 'default-frame-alist '(font . "Consolas-12"))
 (setq default-directory "~/")
 
 (use-package powershell)

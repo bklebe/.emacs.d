@@ -145,5 +145,7 @@
 
 (use-package haskell-mode)
 
+(use-package kotlin-mode)
+
 (provide 'init)
 ;;; init.el ends here

@@ -132,6 +132,9 @@
 
 (use-package dockerfile-mode)
 
+(use-package company-quickhelp
+  :config (company-quickhelp-mode))
+
 (global-git-commit-mode t)
 
 (require 'org-mode-config)

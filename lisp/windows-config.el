@@ -13,5 +13,7 @@
 
 (setq tramp-histfile-override "/dev/null")
 
+(setq auth-sources '("~/.authinfo"))
+
 (provide 'windows-config)
 ;;; windows-config.el ends here

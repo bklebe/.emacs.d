@@ -19,7 +19,7 @@
 (when (fboundp 'set-fontset-font)
   (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
 
-(add-to-list 'default-frame-alist '(font . "Operator Mono SSm-12"))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-14"))
 
 (setq auth-sources '(macos-keychain-internet))
 

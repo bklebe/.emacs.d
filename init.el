@@ -154,5 +154,7 @@
 
 (use-package kotlin-mode)
 
+(setq default-directory "~/")
+
 (provide 'init)
 ;;; init.el ends here

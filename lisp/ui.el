@@ -7,9 +7,11 @@
 ;;; Code:
 
 ;;; Nice syntax theme
-(use-package zenburn-theme :demand t
+(use-package doom-themes
   :config
-  (load-theme 'zenburn t))
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-flatwhite t))
 
 ;;; Show line and column numbers
 (line-number-mode t)

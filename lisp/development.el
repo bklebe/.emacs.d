@@ -34,19 +34,6 @@
 
 (use-package yasnippet-snippets)
 
-(use-package parinfer
-  :hook ((dune-mode emacs-lisp-mode lisp-mode) . parinfer-mode)
-  :bind
-  (("C-," . parinfer-toggle-mode))
-  :init
-  (progn
-    (setq parinfer-extensions
-          '(defaults         ; should be included.
-            pretty-parens    ; different paren styles for different modes.
-            ; paredit        ; Introduce some paredit commands.
-            smart-tab        ; C-b & C-f jump positions and smart shift with tab & S-tab.
-            smart-yank))))   ; Yank behavior depend on mode.
-
 (use-package eglot
   :hook (rust-mode . eglot-ensure))
 

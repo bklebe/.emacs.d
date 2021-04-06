@@ -89,7 +89,56 @@
   (setq ivy-count-format "(%d/%d) ")
   (counsel-mode 1))
 
-(require 'ui)
+;;; As in many other places in this config, a good portion from this is
+;;; from bbatsov/prelude.
+
+;;; Nice syntax theme
+(use-package doom-themes
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-flatwhite t))
+
+;;; Show line and column numbers
+(line-number-mode t)
+(column-number-mode t)
+(size-indication-mode t)
+(when (version<= "26.0.50" emacs-version)
+  (global-display-line-numbers-mode))
+
+;;; Turn off toolbar
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+
+;;; Turn off menubar (note: gets reverted if on macOS)
+(menu-bar-mode -1)
+
+;;; Don't blink the cursor
+(blink-cursor-mode -1)
+
+;;; Turns off annoying alarm
+(setq ring-bell-function 'ignore)
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-echo-area-message t)
+
+;;; Warn when opening files bigger than 100MB
+(setq large-file-warning-threshold 100000000)
+
+;; Nice scrolling
+(setq scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position t)
+
+;;; More useful frame title, that shows either a file or a
+;;; buffer name (if the buffer isn't visiting a file).
+(setq frame-title-format
+      '(:eval (if (buffer-file-name)
+                  (abbreviate-file-name (buffer-file-name))
+                "%b")))
+
+;;; Highlight current line
+(global-hl-line-mode 1)
+
 (require 'backup)
 (when (eq system-type 'darwin) (require 'macos-config))
 (when (eq system-type 'windows-nt) (require 'windows-config))

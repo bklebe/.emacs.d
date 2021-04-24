@@ -139,7 +139,12 @@
 ;;; Highlight current line
 (global-hl-line-mode 1)
 
-(require 'backup)
+;;; backup settings
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (when (eq system-type 'darwin) (require 'macos-config))
 (when (eq system-type 'windows-nt) (require 'windows-config))
 (when (eq system-type 'gnu/linux)

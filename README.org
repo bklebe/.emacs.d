@@ -29,7 +29,6 @@
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-
 (package-initialize)
 
 (defvar bootstrap-packages '(use-package delight))
@@ -63,8 +62,7 @@
 (use-package auto-package-update :demand
   :config
   (setq auto-package-update-delete-old-versions t)
-  (setq auto-package-update-hide-results t)
-  (auto-package-update-maybe))
+  (setq auto-package-update-hide-results t))
 
 (use-package counsel :demand
   :bind (("C-s" . swiper-isearch)

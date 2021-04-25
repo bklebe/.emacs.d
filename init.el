@@ -139,6 +139,9 @@
 ;;; Highlight current line
 (global-hl-line-mode 1)
 
+(use-package lispy
+  :hook (emacs-lisp-mode . lispy-mode))
+
 ;;; backup settings
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))

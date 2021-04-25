@@ -184,6 +184,8 @@
 
          (setq auth-sources '("~/.authinfo"))
          nil))
+
+;;; Linux-specific configuration
 (when (eq system-type 'gnu/linux)
   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
 
@@ -239,11 +241,46 @@
 (use-package eglot
   :hook (rust-mode . eglot-ensure))
 
-(require 'ocaml)
-(require 'dotnet)
-(require 'proof-general-config)
-(require 'rust)
-(require 'python-tools)
+
+;;; OCaml configuration
+(use-package tuareg
+  :bind ("C-c C-s" . utop)
+  :config
+  (setq compile-command "opam config exec corebuild "))
+
+(use-package merlin
+  :after company-mode
+  :hook (tuareg-mode . merlin-mode)
+  :config
+  (setq merlin-error-after-save nil)
+  (add-to-list 'company-backends 'merlin-company-backend)
+  (flycheck-ocaml-setup))
+
+(use-package flycheck-ocaml)
+
+(use-package utop
+  :hook (tuareg-mode . utop-minor-mode)
+  :config
+  (setq utop-command "opam config exec utop -- -emacs"))
+
+(use-package dune)
+
+;;; .NET configuration
+(use-package csharp-mode)
+
+(use-package fsharp-mode)
+
+;;; Proof General configuration
+(use-package proof-general
+  :no-require t)
+
+;;; Rust configuration
+(use-package rust-mode)
+
+;;; Python configuration
+(use-package elpy
+  :init
+  (elpy-enable))
 
 (use-package git-commit)
 
@@ -275,7 +312,14 @@
 
 (global-git-commit-mode t)
 
-(require 'org-mode-config)
+;;; org-mode configuration
+(use-package org
+             :bind (("C-c l" . org-store-link)
+                    ("C-c a" . org-agenda)
+                    ("C-c c" . org-capture)
+                    ("C-c b" . org-switchb)))
+
+(setq org-export-backends '(md txt))
 
 (use-package erlang
   :init

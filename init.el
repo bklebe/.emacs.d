@@ -150,25 +150,26 @@
 
 
 ;;; macOS-specific configuration
-(when (eq system-type 'darwin) (progn (use-package exec-path-from-shell
-                                        :if (eq system-type 'darwin)
-                                        :demand t
-                                        :config
-                                        (exec-path-from-shell-initialize))
+(when (eq system-type 'darwin)
+  (progn (use-package exec-path-from-shell
+           :if (eq system-type 'darwin)
+           :demand t
+           :config
+           (exec-path-from-shell-initialize))
 
-                                      (setq insert-directory-program "gls")
+         (setq insert-directory-program "gls")
 
-                                      ;; There's no point in hiding the menu bar on macOS, so let's not do it
-                                      (menu-bar-mode 1)
+         ;; There's no point in hiding the menu bar on macOS, so let's not do it
+         (menu-bar-mode 1)
 
-                                      ;; Enable emoji, and stop the UI from freezing when trying to display them.
-                                      (when (fboundp 'set-fontset-font)
-                                        (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
+         ;; Enable emoji, and stop the UI from freezing when trying to display them.
+         (when (fboundp 'set-fontset-font)
+           (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
 
-                                      (add-to-list 'default-frame-alist '(font . "Source Code Pro-14"))
+         (add-to-list 'default-frame-alist '(font . "Source Code Pro-14"))
 
-                                      (setq auth-sources '(macos-keychain-internet))
-                                      nil))
+         (setq auth-sources '(macos-keychain-internet))
+         nil))
 
 ;;; Windows-specific configuration
 (when (eq system-type 'windows-nt)

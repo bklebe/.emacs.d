@@ -170,7 +170,19 @@
                                       (setq auth-sources '(macos-keychain-internet))
                                       nil))
 
-(when (eq system-type 'windows-nt) (require 'windows-config))
+;;; Windows-specific configuration
+(when (eq system-type 'windows-nt)
+  (progn (add-to-list 'default-frame-alist '(font . "Consolas-12"))
+         (setq default-directory "~/")
+
+         (use-package powershell)
+
+         (setq tramp-default-method "plink")
+
+         (setq tramp-histfile-override "/dev/null")
+
+         (setq auth-sources '("~/.authinfo"))
+         nil))
 (when (eq system-type 'gnu/linux)
   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
 

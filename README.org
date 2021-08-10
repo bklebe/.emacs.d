@@ -236,8 +236,8 @@
 (use-package yasnippet-snippets)
 
 (use-package eglot
-  :hook (rust-mode . eglot-ensure))
-
+  :hook ((rust-mode . eglot-ensure)
+         (elixir-mode . eglot-ensure)))
 
 ;;; OCaml configuration
 (use-package tuareg

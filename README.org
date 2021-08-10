@@ -236,9 +236,9 @@
 (use-package yasnippet-snippets)
 
 (use-package eglot
+  :init (add-to-list 'eglot-server-programs '(elixir-mode (concat user-emacs-directory "elixir_ls/language_server.sh")))
   :hook ((rust-mode . eglot-ensure)
-         (elixir-mode . eglot-ensure))
-  :config (add-to-list 'eglot-server-programs '(elixir-mode (concat user-emacs-directory "elixir_ls/language_server.sh"))))
+         (elixir-mode . eglot-ensure)))
 
 ;;; OCaml configuration
 (use-package tuareg

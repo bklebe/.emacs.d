@@ -312,12 +312,14 @@
 
 ;;; org-mode configuration
 (use-package org
-             :bind (("C-c l" . org-store-link)
-                    ("C-c a" . org-agenda)
-                    ("C-c c" . org-capture)
-                    ("C-c b" . org-switchb)))
-
-(setq org-export-backends '(md txt))
+  :bind (("C-c l" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c c" . org-capture)
+         ("C-c b" . org-switchb))
+  :config (setq org-export-backends '(md txt)
+                org-edit-src-content-indentation 0
+                org-src-preserve-indentation t
+                org-src-tab-acts-natively t))
 
 (use-package erlang
   :init

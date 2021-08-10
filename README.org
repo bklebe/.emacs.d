@@ -237,7 +237,8 @@
 
 (use-package eglot
   :hook ((rust-mode . eglot-ensure)
-         (elixir-mode . eglot-ensure)))
+         (elixir-mode . eglot-ensure))
+  :config (add-to-list 'eglot-server-programs '(elixir-mode (concat user-emacs-directory "elixir_ls/language_server.sh"))))
 
 ;;; OCaml configuration
 (use-package tuareg

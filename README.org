@@ -209,6 +209,19 @@
 (set-default 'truncate-lines t)
 #+end_src
 
+* org-mode
+  #+begin_src emacs-lisp
+;;; org-mode configuration
+(use-package org
+  :bind (("C-c l" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c c" . org-capture)
+         ("C-c b" . org-switchb))
+  :config (setq org-export-backends '(md txt)
+                org-edit-src-content-indentation 0
+                org-src-preserve-indentation t
+                org-src-tab-acts-natively t))
+  #+end_src
 * Global programming packages
 #+begin_src emacs-lisp
 (use-package company
@@ -322,17 +335,6 @@
   :config (company-quickhelp-mode))
 
 (global-git-commit-mode t)
-
-;;; org-mode configuration
-(use-package org
-  :bind (("C-c l" . org-store-link)
-         ("C-c a" . org-agenda)
-         ("C-c c" . org-capture)
-         ("C-c b" . org-switchb))
-  :config (setq org-export-backends '(md txt)
-                org-edit-src-content-indentation 0
-                org-src-preserve-indentation t
-                org-src-tab-acts-natively t))
 
 (use-package erlang
   :init

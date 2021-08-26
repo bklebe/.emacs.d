@@ -26,6 +26,7 @@
 
 (add-to-list 'load-path lisp-dir)
 
+#+begin_src emacs-lisp
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -56,7 +57,9 @@
 (require 'bind-key)
 
 (setq use-package-always-ensure t)
+#+end_src
 
+#+begin_src emacs-lisp
 (use-package delight)
 
 (use-package auto-package-update :demand
@@ -85,7 +88,9 @@
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
   (counsel-mode 1))
+#+end_src
 
+#+begin_src emacs-lisp
 ;;; As in many other places in this config, a good portion from this is
 ;;; from bbatsov/prelude.
 
@@ -117,7 +122,9 @@
 (setq ring-bell-function 'ignore)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
+#+end_src
 
+#+begin_src emacs-lisp
 ;;; Warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
@@ -144,8 +151,9 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+#+end_src
 
-
+#+begin_src emacs-lisp
 ;;; macOS-specific configuration
 (when (eq system-type 'darwin)
   (progn (use-package exec-path-from-shell
@@ -167,7 +175,9 @@
 
          (setq auth-sources '(macos-keychain-internet))
          nil))
+#+end_src
 
+#+begin_src emacs-lisp
 ;;; Windows-specific configuration
 (when (eq system-type 'windows-nt)
   (progn (add-to-list 'default-frame-alist '(font . "Consolas-12"))
@@ -181,11 +191,15 @@
 
          (setq auth-sources '("~/.authinfo"))
          nil))
+#+end_src
 
+#+begin_src emacs-lisp
 ;;; Linux-specific configuration
 (when (eq system-type 'gnu/linux)
   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
+#+end_src
 
+#+begin_src emacs-lisp
 ;; always prefer fresh bytecode
 (setq load-prefer-newer t)
 
@@ -204,7 +218,9 @@
 (setq next-line-add-newlines nil)
 
 (set-default 'truncate-lines t)
+#+end_src
 
+#+begin_src emacs-lisp
 (use-package company
   :hook (prog-mode . company-mode)
   :config
@@ -240,7 +256,9 @@
          (elixir-mode . eglot-ensure))
   :config
   (add-to-list 'eglot-server-programs '(elixir-mode "~/.emacs.d/elixir_ls/language_server.sh")))
+#+end_src
 
+#+begin_src emacs-lisp
 ;;; OCaml configuration
 (use-package tuareg
   :bind ("C-c C-s" . utop)
@@ -263,7 +281,9 @@
   (setq utop-command "opam config exec utop -- -emacs"))
 
 (use-package dune)
+#+end_src
 
+#+begin_src emacs-lisp
 ;;; .NET configuration
 (use-package csharp-mode)
 

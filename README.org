@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 (require 'package)
 
 (defvar file-name-handler-alist-cache file-name-handler-alist)
@@ -35,7 +35,7 @@
 
 (defun bootstrap-packages-installed-p ()
   "Check if all packages in 'bootstrap-packages' are installed."
-  (every #'package-installed-p bootstrap-packages))
+  (cl-every #'package-installed-p bootstrap-packages))
 
 (defun install-package (package)
   (unless (package-installed-p package)

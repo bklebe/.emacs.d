@@ -17,3 +17,4 @@ tramp
 **/.DS_Store
 *.elc
 /recentf
+/README.el

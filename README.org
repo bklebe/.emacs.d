@@ -56,6 +56,21 @@
 
 (setq default-directory "~/")
 #+end_src
+
+* Editor settings
+#+begin_src emacs-lisp
+;;; editor settings
+(setq require-final-newline t)
+(delete-selection-mode t)
+(setq-default indent-tabs-mode nil)   ;; don't use tabs to indent
+(setq-default tab-width 8)            ;; but maintain correct appearance
+(setq tab-always-indent 'complete)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq next-line-add-newlines nil)
+
+(set-default 'truncate-lines t)
+#+end_src
+
 * Global functional packages
 #+begin_src emacs-lisp
 (use-package delight)
@@ -197,21 +212,6 @@
 ;;; Linux-specific configuration
 (when (eq system-type 'gnu/linux)
   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
-#+end_src
-
-* Editor settings
-#+begin_src emacs-lisp
-
-;;; editor settings
-(setq require-final-newline t)
-(delete-selection-mode t)
-(setq-default indent-tabs-mode nil)   ;; don't use tabs to indent
-(setq-default tab-width 8)            ;; but maintain correct appearance
-(setq tab-always-indent 'complete)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-(setq next-line-add-newlines nil)
-
-(set-default 'truncate-lines t)
 #+end_src
 
 * org-mode

@@ -232,6 +232,13 @@
 (use-package magit
   :bind ("C-x g" . magit-status))
 
+(use-package git-commit)
+
+(use-package company-quickhelp
+  :config (company-quickhelp-mode))
+
+(use-package dash-at-point)
+
 (use-package forge :demand t
   :after magit)
 
@@ -308,7 +315,6 @@
   :init
   (elpy-enable))
 
-(use-package git-commit)
 
 (use-package server
   :config (or (server-running-p) (server-mode)))
@@ -329,14 +335,7 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2))
 
-(use-package dash-at-point)
-
 (use-package dockerfile-mode)
-
-(use-package company-quickhelp
-  :config (company-quickhelp-mode))
-
-(global-git-commit-mode t)
 
 (use-package erlang
   :init

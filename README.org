@@ -39,6 +39,14 @@
 (setq use-package-always-ensure t)
 #+end_src
 
+* Emacs settings
+#+begin_src emacs-lisp
+;;; backup settings
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+#+end_src
 * Global functional packages
 #+begin_src emacs-lisp
 (use-package delight)
@@ -131,11 +139,6 @@
 (use-package lispy
   :hook (emacs-lisp-mode . lispy-mode))
 
-;;; backup settings
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
 #+end_src
 
 * macOS configuration

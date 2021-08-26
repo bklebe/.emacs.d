@@ -1,3 +1,4 @@
+* Preamble
 #+begin_src emacs-lisp
 ;;; Commentary:
 ;;; This config borrows liberally from bbatsov's Emacs Prelude (https://github.com/bbatsov/prelude).
@@ -27,7 +28,7 @@
 (add-to-list 'load-path lisp-dir)
 #+end_src
 
-#+name: Packaging
+* Packaging
 #+begin_src emacs-lisp
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 
@@ -61,6 +62,7 @@
 (setq use-package-always-ensure t)
 #+end_src
 
+* Global functional packages
 #+begin_src emacs-lisp
 (use-package delight)
 
@@ -92,6 +94,7 @@
   (counsel-mode 1))
 #+end_src
 
+* Global appearance configuration
 #+begin_src emacs-lisp
 ;;; As in many other places in this config, a good portion from this is
 ;;; from bbatsov/prelude.
@@ -124,9 +127,7 @@
 (setq ring-bell-function 'ignore)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
-#+end_src
 
-#+begin_src emacs-lisp
 ;;; Warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
@@ -144,7 +145,9 @@
 
 ;;; Highlight current line
 (global-hl-line-mode 1)
+#+end_src
 
+#+begin_src emacs-lisp
 (use-package lispy
   :hook (emacs-lisp-mode . lispy-mode))
 
@@ -155,6 +158,7 @@
       `((".*" ,temporary-file-directory t)))
 #+end_src
 
+* macOS configuration
 #+begin_src emacs-lisp
 ;;; macOS-specific configuration
 (when (eq system-type 'darwin)
@@ -179,6 +183,7 @@
          nil))
 #+end_src
 
+* Windows configuration
 #+begin_src emacs-lisp
 ;;; Windows-specific configuration
 (when (eq system-type 'windows-nt)
@@ -195,12 +200,14 @@
          nil))
 #+end_src
 
+* Linux configuration
 #+begin_src emacs-lisp
 ;;; Linux-specific configuration
 (when (eq system-type 'gnu/linux)
   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
 #+end_src
 
+* Editor settings
 #+begin_src emacs-lisp
 ;; always prefer fresh bytecode
 (setq load-prefer-newer t)
@@ -222,6 +229,7 @@
 (set-default 'truncate-lines t)
 #+end_src
 
+* Global programming packages
 #+begin_src emacs-lisp
 (use-package company
   :hook (prog-mode . company-mode)
@@ -260,6 +268,7 @@
   (add-to-list 'eglot-server-programs '(elixir-mode "~/.emacs.d/elixir_ls/language_server.sh")))
 #+end_src
 
+* OCaml configuration
 #+begin_src emacs-lisp
 ;;; OCaml configuration
 (use-package tuareg
@@ -285,6 +294,7 @@
 (use-package dune)
 #+end_src
 
+* Language major modes
 #+begin_src emacs-lisp
 ;;; .NET configuration
 (use-package csharp-mode)

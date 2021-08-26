@@ -25,7 +25,9 @@
 (setq custom-file custom-storage-file)
 
 (add-to-list 'load-path lisp-dir)
+#+end_src
 
+#+name: Packaging
 #+begin_src emacs-lisp
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 

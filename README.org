@@ -101,6 +101,9 @@
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
   (counsel-mode 1))
+
+(use-package server
+  :config (or (server-running-p) (server-mode)))
 #+end_src
 
 * Global appearance configuration
@@ -314,10 +317,6 @@
 (use-package elpy
   :init
   (elpy-enable))
-
-
-(use-package server
-  :config (or (server-running-p) (server-mode)))
 
 (use-package elixir-mode
   :init

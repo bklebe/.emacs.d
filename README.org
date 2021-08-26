@@ -159,12 +159,6 @@
 (global-hl-line-mode 1)
 #+end_src
 
-#+begin_src emacs-lisp
-(use-package lispy
-  :hook (emacs-lisp-mode . lispy-mode))
-
-#+end_src
-
 * macOS configuration
 #+begin_src emacs-lisp
 ;;; macOS-specific configuration
@@ -294,6 +288,9 @@
 
 * Language major modes
 #+begin_src emacs-lisp
+(use-package lispy
+  :hook (emacs-lisp-mode . lispy-mode))
+
 ;;; .NET configuration
 (use-package csharp-mode)
 

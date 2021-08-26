@@ -106,7 +106,7 @@
   :config (or (server-running-p) (server-mode)))
 #+end_src
 
-* Global appearance configuration
+* Appearance
 #+begin_src emacs-lisp
 ;;; As in many other places in this config, a good portion from this is
 ;;; from bbatsov/prelude.

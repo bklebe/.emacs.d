@@ -321,7 +321,7 @@
 ;;; .NET configuration
 (use-package csharp-mode)
 
-(use-package fsharp-mode)
+;; (use-package fsharp-mode)
 
 ;;; Proof General configuration
 (use-package proof-general

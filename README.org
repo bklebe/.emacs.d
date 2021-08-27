@@ -112,6 +112,7 @@
   (counsel-mode 1))
 
 (use-package server
+  :commands server-running-p
   :config (or (server-running-p) (server-mode)))
 #+end_src
 
@@ -202,9 +203,10 @@
 
          (use-package powershell)
 
-         (setq tramp-default-method "plink")
-
-         (setq tramp-histfile-override "/dev/null")
+         (defvar tramp-default-method)
+         (defvar tramp-histfile-override)
+         (setq tramp-default-method "plink"
+               tramp-histfile-override "/dev/null")
 
          (setq auth-sources '("~/.authinfo"))
          nil))
@@ -233,10 +235,11 @@
 * Global programming packages
 #+begin_src emacs-lisp
 (use-package company
+  :defines company-dabbrev-downcase
   :hook (prog-mode . company-mode)
   :config
-  (setq company-idle-delay 0)
-  (setq company-dabbrev-downcase nil))
+  (setq company-idle-delay 0
+        company-dabbrev-downcase nil))
 
 (use-package magit
   :bind ("C-x g" . magit-status))
@@ -260,6 +263,7 @@
 (use-package csv-mode)
 
 (use-package yasnippet
+  :commands yas-reload-all
   :hook (prog-mode . yas-minor-mode)
   :config
   (yas-reload-all))

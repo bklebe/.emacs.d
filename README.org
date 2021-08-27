@@ -89,6 +89,7 @@
 * Global functional packages
 #+begin_src emacs-lisp
 (use-package delight)
+(use-package esup)
 
 (use-package auto-package-update :demand
   :config

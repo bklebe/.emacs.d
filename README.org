@@ -1,3 +1,9 @@
+#+PROPERTY: header-args:emacs-lisp :lexical yes
+
+#+begin_src emacs-lisp
+;;; -*- lexical-binding: t; -*-
+#+end_src
+
 * Preamble
   #+begin_src emacs-lisp
 (defvar root-dir (file-name-directory load-file-name)

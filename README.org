@@ -30,10 +30,9 @@
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 
 (package-refresh-contents)
+(package-install 'gnu-elpa-keyring-update)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-refresh-contents)
-(package-install 'gnu-elpa-keyring-update)
-(gnu-elpa-keyring-update)
 
 (defvar bootstrap-packages '(use-package delight))
 

@@ -252,7 +252,9 @@
         company-dabbrev-downcase nil))
 
 (use-package magit
-  :bind ("C-x g" . magit-status))
+  :bind ("C-x g" . magit-status)
+  :config
+  (setq magit-repository-directories '(("~/projects". 1))))
 
 (use-package git-commit)
 

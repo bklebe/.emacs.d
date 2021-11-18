@@ -29,10 +29,7 @@
 (require 'package)
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 
-(package-refresh-contents)
-(package-install 'gnu-elpa-keyring-update)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-refresh-contents)
 
 (defvar bootstrap-packages '(use-package delight))
 
@@ -50,6 +47,7 @@
 (defun install-bootstrap-packages ()
   "Install all packages required to bootstrap our setup."
   (unless (bootstrap-packages-installed-p)
+    (package-refresh-contents)
     (install-packages bootstrap-packages)))
 
 (install-bootstrap-packages)

@@ -30,8 +30,6 @@
 ;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(when (not package-archive-contents)
-  (package-refresh-contents))
 
 (defvar bootstrap-packages '(use-package delight))
 
@@ -49,7 +47,7 @@
 (defun install-bootstrap-packages ()
   "Install all packages required to bootstrap our setup."
   (unless (bootstrap-packages-installed-p)
-    (package-refresh-contents nil)
+    (package-refresh-contents)
     (install-packages bootstrap-packages)))
 
 (install-bootstrap-packages)

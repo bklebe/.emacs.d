@@ -262,7 +262,8 @@
 (use-package magit
   :bind ("C-x g" . magit-status)
   :config
-  (setq magit-repository-directories '(("~/projects". 1))))
+  (setq magit-repository-directories '(("~/projects". 1)))
+  (setq magit-git-executable "/usr/local/bin/git"))
 
 (use-package git-commit)
 

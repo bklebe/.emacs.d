@@ -98,6 +98,7 @@
 
 * Global functional packages
 #+begin_src emacs-lisp
+(use-package gnu-elpa-keyring-update)
 (use-package delight)
 (use-package esup)
 
@@ -194,6 +195,8 @@
     :if (eq system-type 'darwin)
     :demand t
     :config
+    (exec-path-from-shell-copy-env "SSH_AGENT_PID")
+    (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
     (exec-path-from-shell-initialize))
 
   (setq insert-directory-program "gls"
@@ -262,7 +265,7 @@
 (use-package magit
   :bind ("C-x g" . magit-status)
   :config
-  (setq magit-repository-directories '(("~/projects". 1)))
+  (setq-default magit-repository-directories '(("~/projects". 1)))
   (setq magit-git-executable "/usr/local/bin/git"))
 
 (use-package git-commit)

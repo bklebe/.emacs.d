@@ -27,32 +27,6 @@
 (load custom-file)
 #+end_src
 
-* Packaging
-#+begin_src emacs-lisp
-;;; Commentary:
-;;; This config borrows liberally from bbatsov's Emacs Prelude (https://github.com/bbatsov/prelude).
-
-;;; Code:
-
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-
-(defvar straight-use-package-by-default)
-(setq straight-use-package-by-default t)
-
-(straight-use-package 'use-package)
-#+end_src
-
 * Emacs settings
 #+begin_src emacs-lisp
 ;;; backup settings
@@ -81,27 +55,51 @@
 (setq-default truncate-lines t)
 #+end_src
 
+* Packaging
+#+begin_src emacs-lisp
+;;; Commentary:
+;;; This config borrows liberally from bbatsov's Emacs Prelude (https://github.com/bbatsov/prelude).
+
+;;; Code:
+
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+(setq use-package-always-defer t)
+(use-package bind-key :demand t :straight use-package)
+#+end_src
+
 * Global functional packages
 #+begin_src emacs-lisp
 (use-package esup)
 
-(use-package counsel :demand
-  :bind (("C-s" . swiper-isearch)
-         ("C-x b" . ivy-switch-buffer)
-         ("C-c v" . ivy-push-view)
-         ("C-c V" . ivy-pop-view)
-         ("C-c C-r" . ivy-resume)
-         ("C-c c" . counsel-compile)
-         ("C-c g" . counsel-git)
-         ("C-c j" . counsel-git-grep)
-         ("C-c L" . counsel-git-log)
-         ("C-c k" . counsel-rg)
-         ("C-c m" . counsel-linux-app)
-         ("C-c n" . counsel-fzf)
-         ("C-x l" . counsel-locate)
-         ("C-c J" . counsel-file-jump)
-         ("C-S-o" . counsel-rhythmbox)
-         ("C-c w" . counsel-wmctrl))
+(use-package counsel :demand t
+  :bind
+  (("C-s" . swiper-isearch)
+   ("C-x b" . ivy-switch-buffer)
+   ("C-c v" . ivy-push-view)
+   ("C-c V" . ivy-pop-view)
+   ("C-c C-r" . ivy-resume)
+   ("C-c c" . counsel-compile)
+   ("C-c g" . counsel-git)
+   ("C-c j" . counsel-git-grep)
+   ("C-c L" . counsel-git-log)
+   ("C-c k" . counsel-rg)
+   ("C-x l" . counsel-locate)
+   ("C-c J" . counsel-file-jump)
+   ("C-c w" . counsel-wmctrl))
   :config
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
@@ -118,7 +116,7 @@
 ;;; from bbatsov/prelude.
 
 ;;; Nice syntax theme
-(use-package doom-themes
+(use-package doom-themes :demand t
   :config
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
@@ -171,7 +169,6 @@
 (when (eq system-type 'darwin)
   (use-package exec-path-from-shell
     :if (eq system-type 'darwin)
-    :demand t
     :config
     (exec-path-from-shell-copy-env "SSH_AGENT_PID")
     (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
@@ -222,10 +219,11 @@
   #+begin_src emacs-lisp
 ;;; org-mode configuration
 (use-package org
-  :bind (("C-c l" . org-store-link)
-         ("C-c a" . org-agenda)
-         ("C-c c" . org-capture)
-         ("C-c b" . org-switchb))
+  :bind
+  (("C-c l" . org-store-link)
+   ("C-c a" . org-agenda)
+   ("C-c c" . org-capture)
+   ("C-c b" . org-switchb))
   :config (setq org-export-backends '(md txt)
                 org-edit-src-content-indentation 0
                 org-src-preserve-indentation t
@@ -235,7 +233,7 @@
 #+begin_src emacs-lisp
 (use-package company
   :defines company-dabbrev-downcase
-  :hook (prog-mode . company-mode)
+  :hook prog-mode
   :config
   (setq company-idle-delay 0
         company-dabbrev-downcase nil))
@@ -253,8 +251,7 @@
 
 (use-package dash-at-point)
 
-(use-package forge :demand t
-  :after magit)
+(use-package forge :after magit)
 
 (use-package projectile
   :bind (("s-p" . projectile-command-map)

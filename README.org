@@ -1,7 +1,6 @@
-#+PROPERTY: header-args:emacs-lisp :lexical yes
-
 #+begin_src emacs-lisp
-;;; -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
 (defvar file-name-handler-alist-handle file-name-handler-alist)
 (setq gc-cons-threshold most-positive-fixnum ; 2^61 bytes
       gc-cons-percentage 0.6

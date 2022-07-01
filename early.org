@@ -1,0 +1,5 @@
+#+begin_src emacs-lisp
+;; -*- lexical-binding: t; -*-
+
+(setq package-enable-at-startup nil)
+#+end_src

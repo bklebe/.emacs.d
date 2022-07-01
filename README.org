@@ -34,37 +34,23 @@
 
 ;;; Code:
 
-(require 'cl-lib)
-(require 'package)
-;; Cribs liberally from bbatsov/prelude/core/prelude-packages.el
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(defvar straight-use-package-by-default)
+(setq straight-use-package-by-default t)
 
-(defvar bootstrap-packages '(use-package delight))
-
-(defun bootstrap-packages-installed-p ()
-  "Check if all packages in 'bootstrap-packages' are installed."
-  (cl-every #'package-installed-p bootstrap-packages))
-
-(defun install-package (package)
-  (unless (package-installed-p package)
-    (package-install package)))
-
-(defun install-packages (packages)
-  (mapc #'install-package packages))
-
-(defun install-bootstrap-packages ()
-  "Install all packages required to bootstrap our setup."
-  (unless (bootstrap-packages-installed-p)
-    (package-refresh-contents)
-    (install-packages bootstrap-packages)))
-
-(install-bootstrap-packages)
-
-(eval-when-compile (require 'use-package))
-(require 'bind-key)
-
-(setq use-package-always-ensure t)
+(straight-use-package 'use-package)
 #+end_src
 
 * Emacs settings
@@ -97,14 +83,7 @@
 
 * Global functional packages
 #+begin_src emacs-lisp
-(use-package gnu-elpa-keyring-update)
-(use-package delight)
 (use-package esup)
-
-(use-package auto-package-update :demand
-  :config
-  (setq auto-package-update-delete-old-versions t)
-  (setq auto-package-update-hide-results t))
 
 (use-package counsel :demand
   :bind (("C-s" . swiper-isearch)

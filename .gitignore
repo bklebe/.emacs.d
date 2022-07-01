@@ -5,6 +5,8 @@ eshell/
 transient/
 server/
 url/
+straight/build/
+straight/repos/
 
 .last-package-update-day
 projectile-bookmarks.eld
@@ -17,3 +19,5 @@ tramp
 *.elc
 /recentf
 /README.el
+/early.el
+straight/build-cache.el

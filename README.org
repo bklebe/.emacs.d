@@ -1,3 +1,5 @@
+#+PROPERTY: header-args :tangle README.el
+
 #+begin_src emacs-lisp
 ;; -*- lexical-binding: t; -*-
 
@@ -76,9 +78,25 @@
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package)
+
 (setq straight-use-package-by-default t)
 (setq use-package-always-defer t)
-(use-package bind-key :demand t :straight use-package)
+(use-package bind-key :demand t)
+#+end_src
+
+* org-mode
+#+begin_src emacs-lisp
+;;; org-mode configuration
+(use-package org
+  :bind
+  (("C-c l" . org-store-link)
+   ("C-c a" . org-agenda)
+   ("C-c c" . org-capture)
+   ("C-c b" . org-switchb))
+  :config (setq org-export-backends '(md txt)
+                org-edit-src-content-indentation 0
+                org-src-preserve-indentation t
+                org-src-tab-acts-natively t))
 #+end_src
 
 * Global functional packages
@@ -215,20 +233,6 @@
   (add-to-list 'default-frame-alist '(font . "Operator Mono SSm Book-14")))
 #+end_src
 
-* org-mode
-#+begin_src emacs-lisp
-;;; org-mode configuration
-(use-package org
-  :bind
-  (("C-c l" . org-store-link)
-   ("C-c a" . org-agenda)
-   ("C-c c" . org-capture)
-   ("C-c b" . org-switchb))
-  :config (setq org-export-backends '(md txt)
-                org-edit-src-content-indentation 0
-                org-src-preserve-indentation t
-                org-src-tab-acts-natively t))
-#+end_src
 * Global programming packages
 #+begin_src emacs-lisp
 (use-package company

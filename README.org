@@ -216,7 +216,7 @@
 #+end_src
 
 * org-mode
-  #+begin_src emacs-lisp
+#+begin_src emacs-lisp
 ;;; org-mode configuration
 (use-package org
   :bind
@@ -228,7 +228,7 @@
                 org-edit-src-content-indentation 0
                 org-src-preserve-indentation t
                 org-src-tab-acts-natively t))
-  #+end_src
+#+end_src
 * Global programming packages
 #+begin_src emacs-lisp
 (use-package company

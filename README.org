@@ -185,7 +185,7 @@
 #+begin_src emacs-lisp
 ;;; macOS-specific configuration
 (when (eq system-type 'darwin)
-  (use-package exec-path-from-shell
+  (use-package exec-path-from-shell :demand t
     :if (eq system-type 'darwin)
     :config
     (exec-path-from-shell-copy-env "SSH_AGENT_PID")

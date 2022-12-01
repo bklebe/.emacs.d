@@ -21,3 +21,4 @@ tramp
 /README.el
 /early.el
 straight/build-cache.el
+/eln-cache/

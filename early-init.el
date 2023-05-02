@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t; -*-
+(setq native-comp-deferred-compilation-deny-list nil)
 
 (defvar bootstrap-version)
 (let ((bootstrap-file

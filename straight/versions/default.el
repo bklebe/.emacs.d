@@ -4,7 +4,7 @@
  ("avy" . "955c8dedd68c74f3cf692c1249513f048518c4c9")
  ("caml-mode" . "a970f303065fe176a920db0466dacf3e2a20b56b")
  ("closql" . "820e95170acb79de0fb554577a0dc9b707e23aea")
- ("company-mode" . "00a739f9684c68c8445b04f33fb8536a07ae34bd")
+ ("company-mode" . "3ec40b0a0ea751b6c48f24abd58c8304deb53014")
  ("company-quickhelp" . "6660a1b380b9599af9ef1cc617168db83f24b9b7")
  ("compat" . "7ca7d300d1d256f674f83932d2918d8e70cd28f6")
  ("csharp-mode" . "1f8616a02d41233684fabfd3a23f37154b5c9ddf")

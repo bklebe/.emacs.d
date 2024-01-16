@@ -1,5 +1,7 @@
 #+PROPERTY: header-args :tangle README.el
 
+* Superseded by my Doom config. Please see [[https://github.com/bklebe/dotfiles/tree/main/.config/doom]].
+
 #+begin_src emacs-lisp
 ;; -*- lexical-binding: t; -*-
 
